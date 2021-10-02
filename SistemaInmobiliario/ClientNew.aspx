@@ -14,13 +14,13 @@
 		<div class="container-fluid">
 			<ul class="full-box list-unstyled page-nav-tabs">
 				<li>
-					<a class="active" href="client-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR CLIENTE</a>
+					<a class="active" href="ClientNew"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR CLIENTE</a>
 				</li>
 				<li>
-					<a href="client-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE CLIENTES</a>
+					<a href="ClientList"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE CLIENTES</a>
 				</li>
 				<li>
-					<a href="client-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR CLIENTE</a>
+					<a href="#buscar"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR CLIENTE</a>
 				</li>
 			</ul>	
 		</div>

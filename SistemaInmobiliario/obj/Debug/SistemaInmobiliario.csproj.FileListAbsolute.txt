@@ -71,3 +71,4 @@ C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\obj\Debug\Si
 C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\obj\Debug\SistemaInmobiliario.csproj.CopyComplete
 C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\obj\Debug\SistemaInmobiliario.dll
 C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\obj\Debug\SistemaInmobiliario.pdb
+C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\obj\Debug\SistemaInmobiliario.csprojAssemblyReference.cache
