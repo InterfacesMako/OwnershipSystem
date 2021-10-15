@@ -1,0 +1,11 @@
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\bin\Debug\Negocio.dll
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\bin\Debug\Negocio.pdb
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\bin\Debug\Datos.dll
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\bin\Debug\Entidad.dll
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\bin\Debug\Datos.pdb
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\bin\Debug\Entidad.pdb
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\obj\Debug\Negocio.dll
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Negocio\obj\Debug\Negocio.pdb

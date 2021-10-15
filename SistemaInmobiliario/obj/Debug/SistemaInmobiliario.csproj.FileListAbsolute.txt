@@ -72,3 +72,9 @@ C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\obj\Debug\Si
 C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\obj\Debug\SistemaInmobiliario.dll
 C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\obj\Debug\SistemaInmobiliario.pdb
 C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\obj\Debug\SistemaInmobiliario.csprojAssemblyReference.cache
+C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\bin\Entidad.dll
+C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\bin\Negocio.dll
+C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\bin\Entidad.pdb
+C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\bin\Negocio.pdb
+C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\bin\Datos.dll
+C:\Users\mig_2\source\repos\SistemaInmobiliario\SistemaInmobiliario\bin\Datos.pdb

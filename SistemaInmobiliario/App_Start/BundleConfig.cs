@@ -14,8 +14,10 @@ namespace SistemaInmobiliario
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
 
+			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+							"~/Scripts/jquery-3.4.1.min.js"));
+
 			bundles.Add(new ScriptBundle("~/bundles/init").Include(
-						"~/Scripts/jquery-3.4.1.min.js",
 						"~/Scripts/sweetalert2.min.js",
 						"~/Scripts/popper.min.js",
 						"~/Scripts/bootstrap.min.js",

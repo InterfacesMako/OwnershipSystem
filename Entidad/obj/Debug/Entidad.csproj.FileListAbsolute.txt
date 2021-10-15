@@ -1,0 +1,6 @@
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Entidad\bin\Debug\Entidad.dll
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Entidad\bin\Debug\Entidad.pdb
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Entidad\obj\Debug\Entidad.csprojAssemblyReference.cache
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Entidad\obj\Debug\Entidad.dll
+C:\Users\mig_2\source\repos\SistemaInmobiliario\Entidad\obj\Debug\Entidad.pdb

@@ -10,8 +10,9 @@
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
+        <%: Scripts.Render("~/bundles/jquery") %>
     </asp:PlaceHolder>
-
+	
 	<!--=============================================
 	=     Include CSS Style files Initialitation    =
 	==============================================-->
@@ -115,6 +116,7 @@
 			</section>
 			
 			<asp:ContentPlaceHolder ID="MainContent" runat="server">
+
 			</asp:ContentPlaceHolder>
 		</main>
     </form>

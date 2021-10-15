@@ -122,6 +122,7 @@
     <Content Include="Content\style.css" />
     <Content Include="Content\sweetalert2.min.css" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="Database\CreacionTablaCliente.sql" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fa-brands-400.svg" />
@@ -154,6 +155,7 @@
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Main.Master" />
     <Content Include="Client.Master" />
+    <Content Include="WebServiceCliente.asmx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-material-design.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -227,6 +229,10 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="WebServiceCliente.asmx.cs">
+      <DependentUpon>WebServiceCliente.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -241,6 +247,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidad\Entidad.csproj">
+      <Project>{46f2458e-f4b9-47d3-aaaf-0ebd1564f2c6}</Project>
+      <Name>Entidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{9a5a93c0-bc45-4761-9583-98aa6da83121}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
