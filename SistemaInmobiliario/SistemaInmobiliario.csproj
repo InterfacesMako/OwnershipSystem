@@ -121,8 +121,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\sweetalert2.min.css" />
+    <Content Include="CreateAccount.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Database\CreacionTablaCliente.sql" />
+    <Content Include="Database\CreacionTablaItems.sql" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fa-brands-400.svg" />
@@ -152,10 +154,16 @@
     <Content Include="fonts\robotocondensed-light-webfont.woff2" />
     <Content Include="fonts\robotocondensed-regular-webfont.woff" />
     <Content Include="fonts\robotocondensed-regular-webfont.woff2" />
+    <Content Include="ItemsList.aspx" />
+    <Content Include="ItemsNew.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Main.Master" />
     <Content Include="Client.Master" />
     <Content Include="WebServiceCliente.asmx" />
+    <Content Include="Items.Master" />
+    <Content Include="WebServiceItem.asmx" />
+    <Content Include="Access.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-material-design.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -174,6 +182,13 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Access.Master.cs">
+      <DependentUpon>Access.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Access.Master.designer.cs">
+      <DependentUpon>Access.Master</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Client.Master.cs">
@@ -197,6 +212,13 @@
     <Compile Include="ClientNew.aspx.designer.cs">
       <DependentUpon>ClientNew.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -213,6 +235,34 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Items.Master.cs">
+      <DependentUpon>Items.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Items.Master.designer.cs">
+      <DependentUpon>Items.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsList.aspx.cs">
+      <DependentUpon>ItemsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemsList.aspx.designer.cs">
+      <DependentUpon>ItemsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsNew.aspx.cs">
+      <DependentUpon>ItemsNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemsNew.aspx.designer.cs">
+      <DependentUpon>ItemsNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
@@ -231,6 +281,10 @@
     </Compile>
     <Compile Include="WebServiceCliente.asmx.cs">
       <DependentUpon>WebServiceCliente.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceItem.asmx.cs">
+      <DependentUpon>WebServiceItem.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

@@ -117,5 +117,6 @@
 			}
 		});
 
+        document.querySelector("#aNew").className = " active";
     </script>
 </asp:Content>

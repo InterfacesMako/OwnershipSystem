@@ -12,7 +12,7 @@
 			
 	<!-- Content -->
 	<div class="full-box tile-container">
-		<a href="client-new.html" class="tile">
+		<a href="ClientList" class="tile">
 			<div class="tile-tittle">Clientes</div>
 			<div class="tile-icon">
 				<i class="fas fa-users fa-fw"></i>
@@ -20,7 +20,7 @@
 			</div>
 		</a>
 
-		<a href="item-list.html" class="tile">
+		<a href="ItemsList" class="tile">
 			<div class="tile-tittle">Items</div>
 			<div class="tile-icon">
 				<i class="fas fa-pallet fa-fw"></i>
@@ -28,15 +28,15 @@
 			</div>
 		</a>
 
-		<a href="reservation-list.html" class="tile">
+		<%--<a href="reservation-list.html" class="tile">
 			<div class="tile-tittle">Prestamos</div>
 			<div class="tile-icon">
 				<i class="fas fa-file-invoice-dollar fa-fw"></i>
 				<p>10 Registrados</p>
 			</div>
-		</a>
+		</a>--%>
 
-		<a href="user-list.html" class="tile">
+		<a href="UserList" class="tile">
 			<div class="tile-tittle">Usuarios</div>
 			<div class="tile-icon">
 				<i class="fas fa-user-secret fa-fw"></i>
@@ -44,7 +44,7 @@
 			</div>
 		</a>
 
-		<a href="company.html" class="tile">
+		<a href="CompanyList" class="tile">
 			<div class="tile-tittle">Empresa</div>
 			<div class="tile-icon">
 				<i class="fas fa-store-alt fa-fw"></i>

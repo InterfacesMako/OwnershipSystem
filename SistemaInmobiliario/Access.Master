@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Access.master.cs" Inherits="SistemaInmobiliario.Access" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title><%: Page.Title %> - System Inmobiliario </title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        <%: Scripts.Render("~/bundles/jquery") %>
+    </asp:PlaceHolder>
+	
+	<!--=============================================
+	=     Include CSS Style files Initialitation    =
+	==============================================-->
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+
+	<!--=============================
+	=     ICONO DE LA APLICACION    =
+	=================================-->
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+	<form runat="server">
+		<asp:ContentPlaceHolder ID="MainContent" runat="server">
+		</asp:ContentPlaceHolder>
+	</form>
+	
+	<!--=============================================
+	=            Include JavaScript files           =
+	==============================================-->
+	<asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/init") %>
+    </asp:PlaceHolder>
+	<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+</body>
+</html>

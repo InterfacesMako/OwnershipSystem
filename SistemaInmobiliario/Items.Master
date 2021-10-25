@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Items.master.cs" Inherits="SistemaInmobiliario.Items" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="SiteContent" runat="Server">
+
+    <!-- Page header -->
+    <div class="full-box page-header">
+        <h3 class="text-left">
+            <i class="fas fa-clipboard-list fa-fw"></i>&nbsp; LISTA DE ITEMS
+        </h3>
+        <p class="text-justify">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum delectus eos enim numquam fugit optio accusantium, aperiam eius facere architecto facilis quibusdam asperiores veniam omnis saepe est et, quod obcaecati.
+        </p>
+    </div>
+    <div class="container-fluid">
+        <ul class="full-box list-unstyled page-nav-tabs">
+            <li>
+                <a id="aItemNew" href="ItemsNew"><i class="fas fa-plus fa-fw"></i>&nbsp; AGREGAR ITEM</a>
+            </li>
+            <li>
+                <a id="aListItem" href="ItemsList"><i class="fas fa-clipboard-list fa-fw"></i>&nbsp; LISTA DE ITEMS</a>
+            </li>
+            <li>
+                <a href="#buscar"><i class="fas fa-search fa-fw"></i>&nbsp; BUSCAR ITEM</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <asp:ContentPlaceHolder ID="body" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>

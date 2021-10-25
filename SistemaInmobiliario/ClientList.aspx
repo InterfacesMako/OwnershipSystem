@@ -172,5 +172,7 @@
         }
 
         Listar();
+
+        document.querySelector("#aList").className = " active";
     </script>
 </asp:Content>
