@@ -18,10 +18,10 @@
     <div class="container-fluid">
         <ul class="full-box list-unstyled page-nav-tabs">
             <li>
-                <a id="aItemNew" href="ItemsNew"><i class="fas fa-plus fa-fw"></i>&nbsp; AGREGAR ITEM</a>
+                <a id="aNew" href="ItemsNew"><i class="fas fa-plus fa-fw"></i>&nbsp; AGREGAR ITEM</a>
             </li>
             <li>
-                <a id="aListItem" href="ItemsList"><i class="fas fa-clipboard-list fa-fw"></i>&nbsp; LISTA DE ITEMS</a>
+                <a id="aList" href="ItemsList"><i class="fas fa-clipboard-list fa-fw"></i>&nbsp; LISTA DE ITEMS</a>
             </li>
             <li>
                 <a href="#buscar"><i class="fas fa-search fa-fw"></i>&nbsp; BUSCAR ITEM</a>

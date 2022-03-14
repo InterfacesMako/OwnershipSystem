@@ -9,6 +9,7 @@ namespace SistemaInmobiliario
 {
     public partial class ItemsList : System.Web.UI.Page
     {
+        public readonly string WebService = "WebServiceItem";
         protected void Page_Load(object sender, EventArgs e)
         {
 

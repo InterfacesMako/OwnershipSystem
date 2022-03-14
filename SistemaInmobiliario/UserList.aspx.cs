@@ -7,10 +7,8 @@ using System.Web.UI.WebControls;
 
 namespace SistemaInmobiliario
 {
-    public partial class ClientList : System.Web.UI.Page
+    public partial class UserList : System.Web.UI.Page
     {
-        public readonly string WebService = "WebServiceCliente";
-
         protected void Page_Load(object sender, EventArgs e)
         {
 

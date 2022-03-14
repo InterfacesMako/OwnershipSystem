@@ -9,6 +9,8 @@ namespace SistemaInmobiliario
 {
     public partial class ClientNew : System.Web.UI.Page
     {
+        public readonly string WebService = "WebServiceCliente";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

@@ -110,6 +110,7 @@
     <Content Include="assets\img\nav-font.jpg" />
     <Content Include="ClientList.aspx" />
     <Content Include="ClientNew.aspx" />
+    <Content Include="Company.aspx" />
     <Content Include="Content\all.css" />
     <Content Include="Content\bootstrap-material-design.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -157,13 +158,19 @@
     <Content Include="ItemsList.aspx" />
     <Content Include="ItemsNew.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Scripts\actionsMain.js" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Main.Master" />
     <Content Include="Client.Master" />
+    <Content Include="Scripts\actionsList.js" />
+    <Content Include="UserList.aspx" />
+    <Content Include="UserNew.aspx" />
+    <Content Include="UserUpdate.aspx" />
     <Content Include="WebServiceCliente.asmx" />
     <Content Include="Items.Master" />
     <Content Include="WebServiceItem.asmx" />
     <Content Include="Access.Master" />
+    <Content Include="Company.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-material-design.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -211,6 +218,20 @@
     </Compile>
     <Compile Include="ClientNew.aspx.designer.cs">
       <DependentUpon>ClientNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company.aspx.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company.aspx.designer.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company.Master.cs">
+      <DependentUpon>Company.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company.Master.designer.cs">
+      <DependentUpon>Company.Master</DependentUpon>
     </Compile>
     <Compile Include="CreateAccount.aspx.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
@@ -279,6 +300,34 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users.Master.cs">
+      <DependentUpon>Users.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users.Master.designer.cs">
+      <DependentUpon>Users.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserNew.aspx.cs">
+      <DependentUpon>UserNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserNew.aspx.designer.cs">
+      <DependentUpon>UserNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserUpdate.aspx.cs">
+      <DependentUpon>UserUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserUpdate.aspx.designer.cs">
+      <DependentUpon>UserUpdate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebServiceCliente.asmx.cs">
       <DependentUpon>WebServiceCliente.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -295,6 +344,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Users.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

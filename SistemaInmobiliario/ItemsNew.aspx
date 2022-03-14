@@ -56,82 +56,38 @@
     </p>
 
     <script type="text/javascript">
-        var btnGuardar = document.querySelector("#btnGuardar");
-        var Estado = document.querySelector("#<%=IdEstado.ClientID%>");
+        const urlCreate = '<%=ResolveUrl($"{WebService}.asmx")%>/Registrar';
+        const urlEdit = '<%=ResolveUrl($"{WebService}.asmx")%>/Actualizar';
+        const btnGuardar = document.querySelector("#btnGuardar");
 
-        if (Estado.value == "Habilitado") {
+        const Id = document.querySelector("#<%=item_codigo.ClientID%>");
+        const nombre = document.querySelector("#<%=item_nombre.ClientID%>");
+        const detalle = document.querySelector("#<%=item_detalle.ClientID%>");
+        const stock = document.querySelector("#<%=item_stock.ClientID%>");
+        const estado = document.querySelector("#item_estado");
+
+        let GetData = function () {
+            return {
+                item: {
+                    Nombre: nombre.value,
+                    Detalle: detalle.value,
+                    Stock: stock.value,
+                    Estado: estado.value
+                }
+            };
+        }
+
+        let getID = (data) => {
+            data.item.Id = Id.value;
+        }
+
+        const IdEstado = document.querySelector("#<%=IdEstado.ClientID%>");
+        if (IdEstado.value == "Habilitado") {
             document.querySelector("#item_estado").value = "1"
         } else {
             document.querySelector("#item_estado").value = "0"
         }
 
-		btnGuardar.addEventListener("click", function (e) {
-			e.preventDefault();
-
-            var Id = document.querySelector("#<%=item_codigo.ClientID%>");
-            var nombre = document.querySelector("#<%=item_nombre.ClientID%>");
-            var detalle = document.querySelector("#<%=item_detalle.ClientID%>");
-            var stock = document.querySelector("#<%=item_stock.ClientID%>");
-            var estado = document.querySelector("#item_estado");
-
-			var data = {
-				item: {
-					Nombre: nombre.value,
-                    Detalle: detalle.value,
-                    Stock: stock.value,
-                    Estado: estado.value
-                }
-			}
-
-			if (Id.value == 0) {
-				$.ajax({
-					type: 'POST',
-					datatype: 'json',
-					contentType: 'application/json; charset=utf-8',
-					url: '<%=ResolveUrl("WebServiceItem.asmx")%>/Registrar',
-					data: JSON.stringify(data),
-					success: function (response) {
-						Id.value = response.d;
-						Swal.fire({
-							position: 'top-end',
-							icon: 'success',
-							title: 'Registrado sastifactoriamente',
-							showConfirmButton: false,
-							timer: 1500
-						})
-					},
-					error: function (xhr, status, error) {
-						console.log(error);
-						swal("Error!", "Ha ocurrido un error en el servidor!", "error");
-					}
-				});
-			} else {
-
-                data.item.Id = Id.value;
-
-                $.ajax({
-                    type: 'POST',
-                    datatype: 'json',
-                    contentType: 'application/json; charset=utf-8',
-                    url: '<%=ResolveUrl("WebServiceItem.asmx")%>/Actualizar',
-                    data: JSON.stringify(data),
-                    success: function (response) {
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: response.d,
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    },
-                    error: function (xhr, status, error) {
-                        console.log(error);
-                        swal("Error!", "Ha ocurrido un error en el servidor!", "error");
-                    }
-                });
-			}
-		});
-
-        document.querySelector("#aItemNew").className = " active";
     </script>
+    <script src="Scripts/actionsMain.js"></script>
 </asp:Content>

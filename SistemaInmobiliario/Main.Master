@@ -91,24 +91,16 @@
 								<a href="#" class="nav-btn-submenu"><i class="fas  fa-user-secret fa-fw"></i> &nbsp; Usuarios <i class="fas fa-chevron-down"></i></a>
 								<ul>
 									<li>
-										<a href="user-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Nuevo usuario</a>
+										<a href="UserNew"><i class="fas fa-plus fa-fw"></i> &nbsp; Nuevo usuario</a>
 									</li>
 									<li>
-										<a href="user-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de usuarios</a>
+										<a href="UserList"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de usuarios</a>
 									</li>
 								</ul>
 							</li>
 
 							<li>
-								<a href="#" class="nav-btn-submenu"><i class="fas fa-store-alt fa-fw"></i>&nbsp; Empresa  <i class="fas fa-chevron-down"></i></a>
-								<ul>
-									<li>
-										<a href="company.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Nueva empresa</a>
-									</li>
-									<li>
-										<a href="company-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de empresa</a>
-									</li>
-								</ul>
+								<a href="Company"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Nueva empresa</a>
 							</li>
 						</ul>
 					</nav>

@@ -44,7 +44,7 @@
 			</div>
 		</a>
 
-		<a href="CompanyList" class="tile">
+		<a href="Company" class="tile">
 			<div class="tile-tittle">Empresa</div>
 			<div class="tile-icon">
 				<i class="fas fa-store-alt fa-fw"></i>

@@ -46,77 +46,33 @@
 	</p>
 
 	<script type="text/javascript">
-		var btnGuardar = document.querySelector("#btnGuardar");
+        const urlCreate = '<%=ResolveUrl($"{WebService}.asmx")%>/Registrar';
+        const urlEdit = '<%=ResolveUrl($"{WebService}.asmx")%>/Actualizar';
+        const btnGuardar = document.querySelector("#btnGuardar");
 
-		btnGuardar.addEventListener("click", function (e) {
-			e.preventDefault();
+        const Id = document.querySelector("#<%=cliente_Id.ClientID%>");
+        const dni = document.querySelector("#<%=cliente_dni.ClientID%>");
+        const nombre = document.querySelector("#<%=cliente_nombre.ClientID%>");
+        const apellido = document.querySelector("#<%=cliente_apellido.ClientID%>");
+        const telefono = document.querySelector("#<%=cliente_telefono.ClientID%>");
+        const direccion = document.querySelector("#<%=cliente_direccion.ClientID%>");
 
-            var Id = document.querySelector("#<%=cliente_Id.ClientID%>");
-            var dni = document.querySelector("#<%=cliente_dni.ClientID%>");
-            var nombre = document.querySelector("#<%=cliente_nombre.ClientID%>");
-            var apellido = document.querySelector("#<%=cliente_apellido.ClientID%>");
-            var telefono = document.querySelector("#<%=cliente_telefono.ClientID%>");
-            var direccion = document.querySelector("#<%=cliente_direccion.ClientID%>");
-
-			var data = {
-				cliente: {
-					DNI: dni.value,
-					Nombre: nombre.value,
-					Apellido: apellido.value,
-					Telefono: telefono.value,
-					Direccion: direccion.value
+        let GetData = function () {
+            return {
+                cliente: {
+                    DNI: dni.value,
+                    Nombre: nombre.value,
+                    Apellido: apellido.value,
+                    Telefono: telefono.value,
+                    Direccion: direccion.value
                 }
-			}
+            };
+		}
 
-			if (Id.value == 0) {
-				$.ajax({
-					type: 'POST',
-					datatype: 'json',
-					contentType: 'application/json; charset=utf-8',
-					url: '<%=ResolveUrl("WebServiceCliente.asmx")%>/Registrar',
-					data: JSON.stringify(data),
-					success: function (response) {
-						Id.value.value = response.d;
-						Swal.fire({
-							position: 'top-end',
-							icon: 'success',
-							title: 'Registrado sastifactoriamente',
-							showConfirmButton: false,
-							timer: 1500
-						})
-					},
-					error: function (xhr, status, error) {
-						console.log(error);
-						swal("Error!", "Ha ocurrido un error en el servidor!", "error");
-					}
-				});
-			} else {
+        let getID = (data) => {
+            data.cliente.Id = Id.value;
+        }
 
-				data.cliente.Id = Id.value;
-
-                $.ajax({
-                    type: 'POST',
-                    datatype: 'json',
-                    contentType: 'application/json; charset=utf-8',
-                    url: '<%=ResolveUrl("WebServiceCliente.asmx")%>/Actualizar',
-                    data: JSON.stringify(data),
-                    success: function (response) {
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: response.d,
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    },
-                    error: function (xhr, status, error) {
-                        console.log(error);
-                        swal("Error!", "Ha ocurrido un error en el servidor!", "error");
-                    }
-                });
-			}
-		});
-
-        document.querySelector("#aNew").className = " active";
     </script>
+    <script src="Scripts/actionsMain.js"></script>
 </asp:Content>

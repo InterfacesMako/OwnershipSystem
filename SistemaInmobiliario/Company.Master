@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="~/Company.master.cs" Inherits="SistemaInmobiliario.Company" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+     <asp:ContentPlaceHolder id="head" runat="server">
+     </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="SiteContent" Runat="Server">
+    <div class="full-box page-header">
+        <h3 class="text-left">
+            <i class="fas fa-building fa-fw"></i> &nbsp; INFORMACÓN DE LA EMPRESA
+        </h3>
+        <p class="text-justify">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero nam eaque nostrum, voluptates, rerum quo. Consequuntur ut, maxime? Quibusdam ipsum maxime non veritatis dignissimos qui reiciendis, amet eum nihil! Et!
+        </p>
+    </div>
+			
+    <div class="container-fluid">
+	    <asp:ContentPlaceHolder ID="body" runat="server">
+	    </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>

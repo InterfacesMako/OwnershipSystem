@@ -63,14 +63,14 @@ namespace SistemaInmobiliario
         }
 
         [WebMethod]
-        public string Eliminar(Item item)
+        public string Eliminar(int Id)
         {
             var response = HttpContext.Current.Request;
             string resp = string.Empty;
 
             try
             {
-                if (nItem.Eliminar(item.Id) == (int)StatusCalledDB.NoProceso)
+                if (nItem.Eliminar(Id) == (int)StatusCalledDB.NoProceso)
                 {
                     resp = "Error no se pudo eliminar el registro";
                 }

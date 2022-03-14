@@ -20,4 +20,11 @@
 		<asp:ContentPlaceHolder ID="SiteContent" runat="server">
 		</asp:ContentPlaceHolder>
 	</section>
+	<script>
+        if (window.location.pathname.replace("/", "").includes("New")) {
+            document.querySelector("#aNew").className = " active";
+        } else {
+            document.querySelector("#aList").className = " active";
+        }
+    </script>
 </asp:Content>
