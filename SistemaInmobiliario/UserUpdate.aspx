@@ -17,37 +17,38 @@
     <div class="container-fluid">
         <fieldset>
             <legend><i class="far fa-address-card"></i>&nbsp; Información personal</legend>
+		<input type="hidden" runat="server" id="usuario_id" value="0" />
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label for="usuario_dni" class="bmd-label-floating">DNI</label>
-                            <input type="text" pattern="[0-9-]{1,20}" class="form-control" name="usuario_dni" id="usuario_dni" maxlength="20">
+                            <input type="text" runat="server" class="form-control" name="usuario_dni" id="usuario_dni" maxlength="20">
                         </div>
                     </div>
 
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label for="usuario_nombre" class="bmd-label-floating">Nombres</label>
-                            <input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,35}" class="form-control" name="usuario_nombre" id="usuario_nombre" maxlength="35">
+                            <input type="text" runat="server" class="form-control" name="usuario_nombre" id="usuario_nombre" maxlength="50">
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label for="usuario_apellido" class="bmd-label-floating">Apellidos</label>
-                            <input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,35}" class="form-control" name="usuario_apellido" id="usuario_apellido" maxlength="35">
+                            <input type="text" runat="server" class="form-control" name="usuario_apellido" id="usuario_apellido" maxlength="50">
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="usuario_telefono" class="bmd-label-floating">Teléfono</label>
-                            <input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="usuario_telefono" id="usuario_telefono" maxlength="20">
+                            <input type="text" runat="server" class="form-control" name="usuario_telefono" id="usuario_telefono" maxlength="30">
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="usuario_direccion" class="bmd-label-floating">Dirección</label>
-                            <input type="text" pattern="[a-zA-Z0-99áéíóúÁÉÍÓÚñÑ()# ]{1,190}" class="form-control" name="usuario_direccion" id="usuario_direccion" maxlength="190">
+                            <input type="text" runat="server" class="form-control" name="usuario_direccion" id="usuario_direccion" maxlength="500">
                         </div>
                     </div>
                 </div>
@@ -63,13 +64,13 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="usuario_usuario" class="bmd-label-floating">Nombre de usuario</label>
-                            <input type="text" pattern="[a-zA-Z0-9]{1,35}" class="form-control" name="usuario_usuario" id="usuario_usuario" maxlength="35">
+                            <input type="text" runat="server" class="form-control" name="usuario_usuario" id="usuario_usuario" maxlength="35">
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="usuario_email" class="bmd-label-floating">Email</label>
-                            <input type="email" class="form-control" name="usuario_email" id="usuario_email" maxlength="70">
+                            <input type="email" runat="server" class="form-control" name="usuario_email" id="usuario_email" maxlength="70">
                         </div>
                     </div>
                     <div class="col-12">
@@ -79,13 +80,13 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="usuario_clave_nueva_1" class="bmd-label-floating">Contraseña</label>
-                            <input type="password" class="form-control" name="usuario_clave_nueva_1" id="usuario_clave_nueva_1" maxlength="200">
+                            <input type="password" runat="server" class="form-control" name="usuario_clave_1" id="usuario_clave_1" maxlength="200">
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="usuario_clave_nueva_2" class="bmd-label-floating">Repetir contraseña</label>
-                            <input type="password" class="form-control" name="usuario_clave_nueva_2" id="usuario_clave_nueva_2" maxlength="200">
+                            <input type="password" runat="server" class="form-control" name="usuario_clave_2" id="usuario_clave_2" maxlength="200">
                         </div>
                     </div>
                 </div>
@@ -95,8 +96,44 @@
         <br>
         <br>
         <p class="text-center" style="margin-top: 40px;">
-            <button type="submit" class="btn btn-raised btn-success btn-sm"><i class="fas fa-sync-alt"></i>&nbsp; ACTUALIZAR</button>
+            <button id="btnGuardar" type="submit" class="btn btn-raised btn-success btn-sm"><i class="fas fa-sync-alt"></i>&nbsp; ACTUALIZAR</button>
         </p>
     </div>
+    <script type="text/javascript">
+        const urlEdit = '<%=ResolveUrl($"{WebService}.asmx")%>/Actualizar';
+        const btnGuardar = document.querySelector("#btnGuardar");
 
+        const id = document.querySelector("#<%=usuario_id.ClientID%>");
+        const dni = document.querySelector("#<%=usuario_dni.ClientID%>");
+        const nombre = document.querySelector("#<%=usuario_nombre.ClientID%>");
+        const apellido = document.querySelector("#<%=usuario_apellido.ClientID%>");
+        const telefono = document.querySelector("#<%=usuario_telefono.ClientID%>");
+        const direccion = document.querySelector("#<%=usuario_direccion.ClientID%>");
+        const usuario = document.querySelector("#<%=usuario_usuario.ClientID%>");
+        const email = document.querySelector("#<%=usuario_email.ClientID%>");
+        const clave1 = document.querySelector("#<%=usuario_clave_1.ClientID%>");
+        const clave2 = document.querySelector("#<%=usuario_clave_2.ClientID%>");
+
+        let GetData = function () {
+            return {
+                user: {
+                    Id: id.value,
+                    Dni: dni.value,
+                    Nombre: nombre.value,
+                    Apellido: apellido.value,
+                    Telefono: telefono.value,
+                    Direccion: direccion.value,
+                    Usuario: usuario.value,
+                    Email: email.value,
+                    Clave: clave1.value,
+                }
+            };
+		}
+
+        let getID = (data) => {
+            data.user.Id = id.value;
+        }
+
+    </script>
+    <script src="Scripts/actionsMain.js"></script>
 </asp:Content>

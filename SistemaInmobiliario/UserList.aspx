@@ -19,90 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-center">
-                    <td>1</td>
-                    <th>03045643</th>
-                    <th>NOMBRE DE USUARIO</th>
-                    <th>APELLIDO DE USUARIO</th>
-                    <th>2345456</th>
-                    <th>NOMBRE DE USUARIO</th>
-                    <th>ADMIN@ADMIN.COM</th>
-                    <td>
-                        <a href="user-update.html" class="btn btn-success">
-                            <i class="fas fa-sync-alt"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <form action="">
-                            <button type="button" class="btn btn-warning">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td>2</td>
-                    <th>03045643</th>
-                    <th>NOMBRE DE USUARIO</th>
-                    <th>APELLIDO DE USUARIO</th>
-                    <th>2345456</th>
-                    <th>NOMBRE DE USUARIO</th>
-                    <th>ADMIN@ADMIN.COM</th>
-                    <td>
-                        <a href="user-update.html" class="btn btn-success">
-                            <i class="fas fa-sync-alt"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <form action="">
-                            <button type="button" class="btn btn-warning">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td>3</td>
-                    <th>03045643</th>
-                    <th>NOMBRE DE USUARIO</th>
-                    <th>APELLIDO DE USUARIO</th>
-                    <th>2345456</th>
-                    <th>NOMBRE DE USUARIO</th>
-                    <th>ADMIN@ADMIN.COM</th>
-                    <td>
-                        <a href="user-update.html" class="btn btn-success">
-                            <i class="fas fa-sync-alt"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <form action="">
-                            <button type="button" class="btn btn-warning">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td>4</td>
-                    <th>03045643</th>
-                    <th>NOMBRE DE USUARIO</th>
-                    <th>APELLIDO DE USUARIO</th>
-                    <th>2345456</th>
-                    <th>NOMBRE DE USUARIO</th>
-                    <th>ADMIN@ADMIN.COM</th>
-                    <td>
-                        <a href="user-update.html" class="btn btn-success">
-                            <i class="fas fa-sync-alt"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <form action="">
-                            <button type="button" class="btn btn-warning">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
+             
             </tbody>
         </table>
     </div>
@@ -119,4 +36,25 @@
             </li>
         </ul>
     </nav>
+    <script src="Scripts/actionsList.js"></script>
+    <script type="text/javascript">
+        const tbody = document.querySelector("tbody");
+        const linkEdit = "/UserNew?Id=";
+        const urlDelete = '<%=ResolveUrl(WebService+".asmx")%>/Eliminar';
+        const urlGetList = '<%=ResolveUrl(WebService+".asmx")%>/Listar';
+
+        let GetData = function (item) {
+            return {
+                Id: item.Id,
+                DNI: item.DNI,
+                Nombre: item.Nombre,
+                Apellido: item.Apellido,
+                Telefono: item.Telefono,
+                Usuario: item.Usuario,
+                Email: item.Email,
+            };
+        }
+
+        Listar();
+    </script>
 </asp:Content>
