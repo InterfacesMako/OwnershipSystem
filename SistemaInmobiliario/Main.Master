@@ -108,7 +108,6 @@
 			</section>
 			
 			<asp:ContentPlaceHolder ID="MainContent" runat="server">
-
 			</asp:ContentPlaceHolder>
 		</main>
     </form>

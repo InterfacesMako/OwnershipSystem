@@ -125,6 +125,7 @@
     <Content Include="CreateAccount.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Database\CreacionTablaCliente.sql" />
+    <Content Include="Database\CreacionTablaEmpresasYUsuarios.sql" />
     <Content Include="Database\CreacionTablaItems.sql" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />

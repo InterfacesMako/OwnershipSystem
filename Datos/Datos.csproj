@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="DCliente.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DCompany.cs" />
     <Compile Include="DItem.cs" />
+    <Compile Include="DUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
