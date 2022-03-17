@@ -102,36 +102,65 @@
         const urlEdit = '<%=ResolveUrl($"{WebService}.asmx")%>/Actualizar';
         const btnGuardar = document.querySelector("#btnGuardar");
 
-        const id = document.querySelector("#<%=usuario_id.ClientID%>");
+        const Id = document.querySelector("#<%=usuario_id.ClientID%>");
         const dni = document.querySelector("#<%=usuario_dni.ClientID%>");
-        const nombre = document.querySelector("#<%=usuario_nombre.ClientID%>");
-        const apellido = document.querySelector("#<%=usuario_apellido.ClientID%>");
+        const nombres = document.querySelector("#<%=usuario_nombre.ClientID%>");
+        const apellidos = document.querySelector("#<%=usuario_apellido.ClientID%>");
         const telefono = document.querySelector("#<%=usuario_telefono.ClientID%>");
         const direccion = document.querySelector("#<%=usuario_direccion.ClientID%>");
         const usuario = document.querySelector("#<%=usuario_usuario.ClientID%>");
-        const email = document.querySelector("#<%=usuario_email.ClientID%>");
+        const correo = document.querySelector("#<%=usuario_email.ClientID%>");
         const clave1 = document.querySelector("#<%=usuario_clave_1.ClientID%>");
         const clave2 = document.querySelector("#<%=usuario_clave_2.ClientID%>");
 
+        //Roles Privigelios & Permisos
+        const rbControlTotal = document.querySelector("#<%=rbControlTotal.ClientID%>");
+        const rbEdiccion = document.querySelector("#<%=rbEdiccion.ClientID%>");
+        const rbRegistrar = document.querySelector("#<%=rbRegistrar.ClientID%>");
+        const rbLeer = document.querySelector("#<%=rbLeer.ClientID%>");
+        
         let GetData = function () {
+            const idRol = getPrivilegios();
+
             return {
                 user: {
-                    Id: id.value,
-                    Dni: dni.value,
-                    Nombre: nombre.value,
-                    Apellido: apellido.value,
+                    DNI: dni.value,
+                    Nombres: nombres.value,
+                    Apellidos: apellidos.value,
                     Telefono: telefono.value,
                     Direccion: direccion.value,
-                    Usuario: usuario.value,
-                    Email: email.value,
-                    Clave: clave1.value,
+                    Username: usuario.value,
+                    Correo: correo.value,
+                    Password: clave1.value,
+                    IdRol: idRol,
                 }
             };
 		}
 
         let getID = (data) => {
-            data.user.Id = id.value;
+            data.user.Id = Id.value;
         }
+
+        let getPrivilegios = () => {
+            let privilegioRpta;
+
+            const SOLO_LECTURA = 0;
+            const CONTROL_TOTAL = 1;
+            const EDICCION = 2;
+            const REGISTRAR = 3;
+
+            if (rbLeer.checked) {
+                privilegioRpta = SOLO_LECTURA;
+            } else if (rbControlTotal.checked) {
+                privilegioRpta = CONTROL_TOTAL
+            } else if (rbEdiccion.checked) {
+                privilegioRpta = EDICCION
+            } else if (rbRegistrar.checked) {
+                privilegioRpta = REGISTRAR
+            }
+
+            return privilegioRpta;
+        }; 
 
     </script>
     <script src="Scripts/actionsMain.js"></script>

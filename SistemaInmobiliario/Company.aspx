@@ -17,8 +17,8 @@
 
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                        <label for="empresa_email" class="bmd-label-floating">Correo</label>
-                        <input type="email" runat="server" class="form-control" name="empresa_email" id="empresa_email" maxlength="70">
+                        <label for="empresa_correo" class="bmd-label-floating">Correo</label>
+                        <input type="email" runat="server" class="form-control" name="empresa_correo" id="empresa_correo" maxlength="70">
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
@@ -51,7 +51,7 @@
 
         const Id = document.querySelector("#<%=empresa_Id.ClientID%>");
         const nombre = document.querySelector("#<%=empresa_nombre.ClientID%>");
-        const email = document.querySelector("#<%=empresa_email.ClientID%>");
+        const correo = document.querySelector("#<%=empresa_correo.ClientID%>");
         const telefono = document.querySelector("#<%=empresa_telefono.ClientID%>");
         const direccion = document.querySelector("#<%=empresa_direccion.ClientID%>");
 
@@ -59,7 +59,7 @@
             return {
                 company: {
                     Nombre: nombre.value,
-                    Email: email.value,
+                    Correo: correo.value,
                     Telefono: telefono.value,
                     Direccion: direccion.value
                 }

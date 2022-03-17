@@ -169,9 +169,11 @@
     <Content Include="UserUpdate.aspx" />
     <Content Include="WebServiceCliente.asmx" />
     <Content Include="Items.Master" />
+    <Content Include="WebServiceCompany.asmx" />
     <Content Include="WebServiceItem.asmx" />
     <Content Include="Access.Master" />
     <Content Include="Company.Master" />
+    <Content Include="WebServiceUser.asmx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-material-design.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -333,8 +335,16 @@
       <DependentUpon>WebServiceCliente.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="WebServiceCompany.asmx.cs">
+      <DependentUpon>WebServiceCompany.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WebServiceItem.asmx.cs">
       <DependentUpon>WebServiceItem.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceUser.asmx.cs">
+      <DependentUpon>WebServiceUser.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

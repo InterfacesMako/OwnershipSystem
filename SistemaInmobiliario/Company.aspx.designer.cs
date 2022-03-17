@@ -33,13 +33,13 @@ namespace SistemaInmobiliario
         protected global::System.Web.UI.HtmlControls.HtmlInputText empresa_nombre;
 
         /// <summary>
-        /// empresa_email control.
+        /// empresa_correo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl empresa_email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl empresa_correo;
 
         /// <summary>
         /// empresa_telefono control.

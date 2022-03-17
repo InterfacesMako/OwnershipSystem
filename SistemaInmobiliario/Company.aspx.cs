@@ -29,7 +29,7 @@ namespace SistemaInmobiliario
         {
             empresa_Id.Value = cliente.Id.ToString();
             empresa_nombre.Value = cliente.DNI;
-            empresa_email.Value = cliente.Nombre;
+            empresa_correo.Value = cliente.Nombre;
             empresa_telefono.Value = cliente.Telefono;
             empresa_direccion.Value = cliente.Direccion;
         }

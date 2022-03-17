@@ -38,7 +38,7 @@ namespace Datos
                 item.Telefono = dt.Rows[i]["Telefono"].ToString();
                 item.Direccion = dt.Rows[i]["Direccion"].ToString();
                 item.Username = dt.Rows[i]["Username"].ToString();
-                item.Email = dt.Rows[i]["Email"].ToString();
+                item.Correo = dt.Rows[i]["Email"].ToString();
                 item.Password = dt.Rows[i]["Password"].ToString();
                 item.IdRol = (Roles)Convert.ToInt32(dt.Rows[i]["IdRol"]);
 
@@ -72,7 +72,7 @@ namespace Datos
                     item.Telefono = dr["Telefono"].ToString();
                     item.Direccion = dr["Direccion"].ToString();
                     item.Username = dr["Username"].ToString();
-                    item.Email = dr["Email"].ToString();
+                    item.Correo = dr["Email"].ToString();
                     item.Password = dr["Password"].ToString();
                     item.IdRol = (Roles)Convert.ToInt32(dr["IdRol"]);
                 }
@@ -103,7 +103,7 @@ namespace Datos
             cmd.Parameters.AddWithValue("@Telefono", item.Telefono);
             cmd.Parameters.AddWithValue("@Direccion", item.Direccion);
             cmd.Parameters.AddWithValue("@Username", item.Username);
-            cmd.Parameters.AddWithValue("@Email", item.Email);
+            cmd.Parameters.AddWithValue("@Email", item.Correo);
             cmd.Parameters.AddWithValue("@Password", item.Password);
             cmd.Parameters.AddWithValue("@IdRol", (int)item.IdRol);
             conexion.ConexionOpen(conn);
@@ -126,7 +126,7 @@ namespace Datos
             cmd.Parameters.AddWithValue("@Telefono", item.Telefono);
             cmd.Parameters.AddWithValue("@Direccion", item.Direccion);
             cmd.Parameters.AddWithValue("@Username", item.Username);
-            cmd.Parameters.AddWithValue("@Email", item.Email);
+            cmd.Parameters.AddWithValue("@Email", item.Correo);
             cmd.Parameters.AddWithValue("@Password", item.Password);
             cmd.Parameters.AddWithValue("@Id", item.Id);
             cmd.Parameters.AddWithValue("@IdRol", (int)item.IdRol);

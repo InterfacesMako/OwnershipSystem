@@ -47,11 +47,11 @@
             return {
                 Id: item.Id,
                 DNI: item.DNI,
-                Nombre: item.Nombre,
-                Apellido: item.Apellido,
+                Nombre: item.Nombres,
+                Apellido: item.Apellidos,
                 Telefono: item.Telefono,
-                Usuario: item.Usuario,
-                Email: item.Email,
+                Usuario: item.Username,
+                Email: item.Correo,
             };
         }
 
