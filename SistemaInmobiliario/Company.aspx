@@ -54,22 +54,8 @@
         const correo = document.querySelector("#<%=empresa_correo.ClientID%>");
         const telefono = document.querySelector("#<%=empresa_telefono.ClientID%>");
         const direccion = document.querySelector("#<%=empresa_direccion.ClientID%>");
-
-        let GetData = function () {
-            return {
-                company: {
-                    Nombre: nombre.value,
-                    Correo: correo.value,
-                    Telefono: telefono.value,
-                    Direccion: direccion.value
-                }
-            };
-		}
-
-        let getID = (data) => {
-            data.company.Id = Id.value;
-        }
-
     </script>
+    <script src="Scripts/Formularios/FrmCompanyNew.js"></script>
+    <script src="Scripts/Formularios/FrmStandard.js"></script>
     <script src="Scripts/actionsMain.js"></script>
 </asp:Content>

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
     <!-- Content here-->
     <div class="table-responsive">
-        <table class="table table-dark table-sm">
+        <table class="table table-dark table-sm" id="listado">
             <thead>
                 <tr class="text-center roboto-medium">
                     <th>#</th>
@@ -11,8 +11,8 @@
                     <th>NOMBRE</th>
                     <th>APELLIDO</th>
                     <th>TELEFONO</th>
-                    <th>ACTUALIZAR</th>
-                    <th>ELIMINAR</th>
+                    <th id="thEdit">ACTUALIZAR</th>
+                    <th id="thDelete">ELIMINAR</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +40,9 @@
         const linkEdit = "/ClientNew?Id=";
         const urlDelete = '<%=ResolveUrl(WebService+".asmx")%>/Eliminar';
         const urlGetList = '<%=ResolveUrl(WebService+".asmx")%>/Listar';
+        const Delete = '<%=Delete%>'
+        const Edit = '<%=Edit%>'
+        const Register = '<%=Register%>'
 
         let GetData = function (item) {
             return {

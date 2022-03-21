@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,26 +18,45 @@ namespace SistemaInmobiliario
             {
                 if (Request.QueryString["Id"] != null)
                 {
-                    int IdCliente = Convert.ToInt32(Request.QueryString["Id"]);
+                    int IdUser = Convert.ToInt32(Request.QueryString["Id"]);
 
-                    var nCliente = new Negocio.NCliente();
-                    var Cliente = nCliente.Seleccionar(IdCliente);
-                    LlenarFormulario(Cliente);
+                    var nUser = new Negocio.NUser();
+                    var user = nUser.Seleccionar(IdUser);
+                    LlenarFormulario(user);
                 }
             }
         }
-        private void LlenarFormulario(Entidad.Cliente cliente)
+        private void LlenarFormulario(User user)
         {
-            usuario_id.Value = cliente.Id.ToString();
-            usuario_dni.Value = cliente.Direccion;
-            usuario_nombre.Value = cliente.DNI;
-            usuario_apellido.Value = cliente.Nombre;
-            usuario_telefono.Value = cliente.Telefono;
-            usuario_direccion.Value = cliente.Direccion;
-            usuario_email.Value = cliente.Direccion;
-            usuario_usuario.Value = cliente.Direccion;
-            usuario_clave_1.Value = cliente.Direccion;
+            usuario_id.Value = user.Id.ToString();
+            usuario_dni.Value = user.DNI;
+            usuario_nombre.Value = user.Nombres;
+            usuario_apellido.Value = user.Apellidos;
+            usuario_telefono.Value = user.Telefono;
+            usuario_direccion.Value = user.Direccion;
+            usuario_email.Value = user.Correo;
+            usuario_usuario.Value = user.Username;
+
+            SeleccionarRol(user.IdRol);
         }
 
+        private void SeleccionarRol(Roles idRol)
+        {
+            switch(idRol) 
+            {
+                case Roles.CONTROL_TOTAL:
+                    rbControlTotal.Checked = true;
+                    break;
+                case Roles.EDICCION:
+                    rbEdiccion.Checked = true;
+                    break;
+                case Roles.REGISTRAR:
+                    rbRegistrar.Checked = true;
+                    break;
+                case Roles.SOLO_LEER:
+                    rbLeer.Checked = true;
+                    break;
+            }
+        }
     }
 }

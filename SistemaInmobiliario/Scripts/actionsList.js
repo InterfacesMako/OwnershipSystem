@@ -8,8 +8,13 @@ function crearFila(item) {
         tr.appendChild(td);
     }
 
-    tr.appendChild(crearActualizar(item.Id));
-    tr.appendChild(crearEliminar(item.Id));
+    if (Edit != "False") {
+        tr.appendChild(crearActualizar(item.Id));
+    }
+
+    if (Delete != "False") {
+        tr.appendChild(crearEliminar(item.Id));
+    }
 
     tbody.appendChild(tr);
 }

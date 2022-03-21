@@ -119,49 +119,10 @@
         const rbRegistrar = document.querySelector("#<%=rbRegistrar.ClientID%>");
         const rbLeer = document.querySelector("#<%=rbLeer.ClientID%>");
         
-        let GetData = function () {
-            const idRol = getPrivilegios();
-
-            return {
-                user: {
-                    DNI: dni.value,
-                    Nombres: nombres.value,
-                    Apellidos: apellidos.value,
-                    Telefono: telefono.value,
-                    Direccion: direccion.value,
-                    Username: usuario.value,
-                    Correo: correo.value,
-                    Password: clave1.value,
-                    IdRol: idRol,
-                }
-            };
-		}
-
-        let getID = (data) => {
-            data.user.Id = Id.value;
-        }
-
-        let getPrivilegios = () => {
-            let privilegioRpta;
-
-            const SOLO_LECTURA = 0;
-            const CONTROL_TOTAL = 1;
-            const EDICCION = 2;
-            const REGISTRAR = 3;
-
-            if (rbLeer.checked) {
-                privilegioRpta = SOLO_LECTURA;
-            } else if (rbControlTotal.checked) {
-                privilegioRpta = CONTROL_TOTAL
-            } else if (rbEdiccion.checked) {
-                privilegioRpta = EDICCION
-            } else if (rbRegistrar.checked) {
-                privilegioRpta = REGISTRAR
-            }
-
-            return privilegioRpta;
-        }; 
+        
 
     </script>
+    <script src="Scripts/Formularios/FrmUserNew.js"></script>
+    <script src="Scripts/Formularios/FrmStandard.js"></script>
     <script src="Scripts/actionsMain.js"></script>
 </asp:Content>

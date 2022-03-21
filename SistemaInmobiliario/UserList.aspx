@@ -14,8 +14,8 @@
                     <th>TELÉFONO</th>
                     <th>USUARIO</th>
                     <th>EMAIL</th>
-                    <th>ACTUALIZAR</th>
-                    <th>ELIMINAR</th>
+                    <th id="thEdit">ACTUALIZAR</th>
+                    <th id="thDelete">ELIMINAR</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,6 +42,9 @@
         const linkEdit = "/UserNew?Id=";
         const urlDelete = '<%=ResolveUrl(WebService+".asmx")%>/Eliminar';
         const urlGetList = '<%=ResolveUrl(WebService+".asmx")%>/Listar';
+        const Delete = '<%=Delete%>'
+        const Edit = '<%=Edit%>'
+        const Register = '<%=Register%>'
 
         let GetData = function (item) {
             return {

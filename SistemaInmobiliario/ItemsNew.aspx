@@ -65,29 +65,9 @@
         const detalle = document.querySelector("#<%=item_detalle.ClientID%>");
         const stock = document.querySelector("#<%=item_stock.ClientID%>");
         const estado = document.querySelector("#item_estado");
-
-        let GetData = function () {
-            return {
-                item: {
-                    Nombre: nombre.value,
-                    Detalle: detalle.value,
-                    Stock: stock.value,
-                    Estado: estado.value
-                }
-            };
-        }
-
-        let getID = (data) => {
-            data.item.Id = Id.value;
-        }
-
         const IdEstado = document.querySelector("#<%=IdEstado.ClientID%>");
-        if (IdEstado.value == "Habilitado") {
-            document.querySelector("#item_estado").value = "1"
-        } else {
-            document.querySelector("#item_estado").value = "0"
-        }
-
     </script>
+    <script src="Scripts/Formularios/FrmItemNew.js"></script>
+    <script src="Scripts/Formularios/FrmStandard.js"></script>
     <script src="Scripts/actionsMain.js"></script>
 </asp:Content>

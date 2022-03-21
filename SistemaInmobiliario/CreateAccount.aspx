@@ -32,6 +32,9 @@
 				<label for="UserRepeatPassword" class="bmd-label-floating"><i class="fas fa-key"></i> &nbsp; Repite Contraseña</label>
 				<input runat="server" type="password" class="form-control" id="UserRepeatPassword" name="clave" maxlength="200">
 			</div>
+			<div style="text-align:center">
+				<asp:Label Text="" ForeColor ="red" Font-Bold="true" ID="lblResp" runat="server" />
+            </div>
 			<asp:Button runat="server" ID="btnCreateAndLogin" OnClick="btnCreateAndLogin_Click" class="btn-login text-center" Text="CREATE AND LOGIN"></asp:Button>
 		</div>
 	</div>

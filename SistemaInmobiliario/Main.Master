@@ -38,7 +38,8 @@
 						<i class="far fa-times-circle show-nav-lateral"></i>
 						<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 						<figcaption class="roboto-medium text-center">
-							Carlos Alfaro <br><small class="roboto-condensed-light">Web Developer</small>
+							<asp:Label ID="lblUser" runat="server"></asp:Label>
+							<br><small class="roboto-condensed-light">Web Developer</small>
 						</figcaption>
 					</figure>
 					<div class="full-box nav-lateral-bar"></div>
@@ -52,7 +53,7 @@
 								<a href="#" class="nav-btn-submenu"><i class="fas fa-users fa-fw"></i> &nbsp; Clientes <i class="fas fa-chevron-down"></i></a>
 								<ul>
 									<li>
-										<a href="ClientNew"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Cliente</a>
+										<a href="ClientNew" id="ClientNew"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Cliente</a>
 									</li>
 									<li>
 										<a href="ClientList"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de clientes</a>
@@ -64,7 +65,7 @@
 								<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Items <i class="fas fa-chevron-down"></i></a>
 								<ul>
 									<li>
-										<a href="ItemsNew"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar item</a>
+										<a href="ItemsNew" id="ItemsNew"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar item</a>
 									</li>
 									<li>
 										<a href="ItemsList"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de items</a>
@@ -87,11 +88,12 @@
 								</ul>
 							</li>--%>
 
-							<li>
+							
+							<li runat="server" id="liUser">
 								<a href="#" class="nav-btn-submenu"><i class="fas  fa-user-secret fa-fw"></i> &nbsp; Usuarios <i class="fas fa-chevron-down"></i></a>
 								<ul>
 									<li>
-										<a href="UserNew"><i class="fas fa-plus fa-fw"></i> &nbsp; Nuevo usuario</a>
+										<a href="UserNew" id="UserNew"><i class="fas fa-plus fa-fw"></i> &nbsp; Nuevo usuario</a>
 									</li>
 									<li>
 										<a href="UserList"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de usuarios</a>

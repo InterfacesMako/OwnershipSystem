@@ -21,10 +21,29 @@
 		</asp:ContentPlaceHolder>
 	</section>
 	<script>
-        if (window.location.pathname.replace("/", "").includes("New")) {
-            document.querySelector("#aNew").className = " active";
-        } else {
-            document.querySelector("#aList").className = " active";
-        }
+		if (window.location.pathname.includes("New") || window.location.pathname.includes("List")) {
+            if (window.location.pathname.replace("/", "").includes("New")) {
+                document.querySelector("#aNew").className = " active";
+            } else {
+                document.querySelector("#aList").className = " active";
+            }
+		}
+
+		function CagarFilasConPermisos() {
+
+            if (Edit == "False") {
+                document.querySelector("#thEdit").style.display = "none";
+            }
+
+            if (Delete == "False") {
+                document.querySelector("#thDelete").style.display = "none";
+            }
+
+            if (Register == "False") {
+                document.querySelector("#aNew").style.display = "none";
+            }
+		}
+
+        CagarFilasConPermisos();
     </script>
 </asp:Content>

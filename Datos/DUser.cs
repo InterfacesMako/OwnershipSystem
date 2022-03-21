@@ -163,5 +163,35 @@ namespace Datos
 
             return fueEliminado;
         }
+
+        public int Login(string user, string pass)
+        {
+            var conn = conexion.GetConexion();
+            int idUser = 0;
+
+            try
+            {
+                cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "USERS_LOGIN";
+                cmd.Parameters.AddWithValue("@User", user);
+                cmd.Parameters.AddWithValue("@Pass", pass);
+                conexion.ConexionOpen(conn);
+                idUser = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            }
+            catch (Exception ex)
+            {
+                idUser = 0;
+                Errores = ex.Message;
+            }
+            finally
+            {
+                conexion.ConexionClose(conn);
+                cmd.Dispose();
+            }
+
+            return idUser;
+        }
     }
 }

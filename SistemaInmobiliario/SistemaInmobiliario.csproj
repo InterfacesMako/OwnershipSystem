@@ -164,6 +164,13 @@
     <Content Include="Main.Master" />
     <Content Include="Client.Master" />
     <Content Include="Scripts\actionsList.js" />
+    <Content Include="Scripts\Formularios\FrmCompanyNew.js" />
+    <Content Include="Scripts\Formularios\FrmUserUpdate.js" />
+    <Content Include="Scripts\Formularios\FrmUserNew.js" />
+    <Content Include="Scripts\Formularios\FrmItemNew.js" />
+    <Content Include="Scripts\Formularios\FrmClientNew.js" />
+    <Content Include="Scripts\Formularios\FrmStandard.js" />
+    <Content Include="Scripts\locationpicker.jquery.js" />
     <Content Include="UserList.aspx" />
     <Content Include="UserNew.aspx" />
     <Content Include="UserUpdate.aspx" />
@@ -331,6 +338,7 @@
     <Compile Include="UserUpdate.aspx.designer.cs">
       <DependentUpon>UserUpdate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Permisos.cs" />
     <Compile Include="WebServiceCliente.asmx.cs">
       <DependentUpon>WebServiceCliente.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -364,6 +372,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{E1F1AB39-6AAE-49E6-9C99-309AD8FAAFC1}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidad\Entidad.csproj">
       <Project>{46f2458e-f4b9-47d3-aaaf-0ebd1564f2c6}</Project>
       <Name>Entidad</Name>

@@ -8,6 +8,16 @@ namespace Entidad
 {
     public class User
     {
+        public User()
+        {
+            DNI = string.Empty;
+            Nombres = string.Empty;
+            Apellidos = string.Empty;
+            Telefono = string.Empty;
+            Direccion = string.Empty;
+            IdRol = Roles.SOLO_LEER;
+        }
+
         public int Id { get; set; }
         public string DNI { get; set; }
         public string Nombres { get; set; }

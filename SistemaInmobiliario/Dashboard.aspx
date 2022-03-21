@@ -12,19 +12,22 @@
 			
 	<!-- Content -->
 	<div class="full-box tile-container">
-		<a href="ClientList" class="tile">
+		<a href="ClientList" id="cClientes" class="tile">
 			<div class="tile-tittle">Clientes</div>
 			<div class="tile-icon">
 				<i class="fas fa-users fa-fw"></i>
-				<p>5 Registrados</p>
+				<p>
+                    <asp:Label id="lblClienteRegistrados" Text="0" runat="server" /> Registrados</p>
 			</div>
 		</a>
 
-		<a href="ItemsList" class="tile">
+		<a href="ItemsList" id="cItems" class="tile">
 			<div class="tile-tittle">Items</div>
 			<div class="tile-icon">
 				<i class="fas fa-pallet fa-fw"></i>
-				<p>9 Registrados</p>
+				<p>
+					<asp:Label id="lblItemsRegistrados" Text="0" runat="server" /> Registrados
+				</p>
 			</div>
 		</a>
 
@@ -36,20 +39,29 @@
 			</div>
 		</a>--%>
 
-		<a href="UserList" class="tile">
+		<a href="UserList" id="cUsuarios" class="tile">
 			<div class="tile-tittle">Usuarios</div>
 			<div class="tile-icon">
 				<i class="fas fa-user-secret fa-fw"></i>
-				<p>50 Registrados</p>
+				<p>
+					<asp:Label id="lblUserRegistrados" Text="0" runat="server" /> Registrados
+				</p>
 			</div>
 		</a>
 
-		<a href="Company" class="tile">
+		<a href="Company?Id=1" class="tile">
 			<div class="tile-tittle">Empresa</div>
 			<div class="tile-icon">
 				<i class="fas fa-store-alt fa-fw"></i>
-				<p>1 Registrada</p>
+				<p>
+					<asp:Label id="lblEmpresaRegistradas" Text="0" runat="server" /> Registrada
+				</p>
 			</div>
 		</a>
 	</div>
+	<script>
+        const cClientes = document.querySelector("#cClientes");
+        const cItems = document.querySelector("#cItems");
+        const cUsuarios = document.querySelector("#cUsuarios");
+    </script>
 </asp:Content>

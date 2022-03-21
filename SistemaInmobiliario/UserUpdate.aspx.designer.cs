@@ -15,6 +15,15 @@ namespace SistemaInmobiliario
     {
 
         /// <summary>
+        /// usuario_idRol control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden usuario_idRol;
+
+        /// <summary>
         /// usuario_id control.
         /// </summary>
         /// <remarks>

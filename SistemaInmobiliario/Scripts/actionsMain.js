@@ -46,15 +46,3 @@ let actualizarRegistro = (data) => {
     });
 }
 
-btnGuardar.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    var data = GetData();
-
-    if (Id.value == 0) {
-        guardarRegistro(data);
-    } else {
-        getID(data);
-        actualizarRegistro(data);
-    }
-});

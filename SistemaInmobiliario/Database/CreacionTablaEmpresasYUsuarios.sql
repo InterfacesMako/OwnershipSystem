@@ -122,7 +122,7 @@ CREATE PROCEDURE [dbo].USERS_ACTUALIZAR
 	@USERNAME VARCHAR(30),
 	@EMAIL VARCHAR(50),
 	@PASSWORD VARCHAR(30),
-	@IdRol int,
+	@IdRol int = null,
 	@Id int
 AS
 begin
@@ -133,10 +133,22 @@ begin
 	TELEFONO = @TELEFONO,
 	DIRECCION = @DIRECCION,
 	USERNAME = @USERNAME,
-	EMAIL = @EMAIL,
-	PASSWORD = @PASSWORD,
-	IdRol=@IdRol
+	EMAIL = @EMAIL
 	where Id = @Id
+
+	if(@PASSWORD != '')
+	begin
+		UPDATE USERS 
+		SET PASSWORD = @PASSWORD
+		where Id = @Id
+	end
+
+	if(@IdRol is not null)
+	begin
+		UPDATE USERS 
+		SET IdRol=@IdRol
+		where Id = @Id
+	end
 end
 go
 CREATE PROCEDURE [dbo].USERS_ELIMINAR
@@ -147,3 +159,16 @@ begin
 	where Id = @Id
 end
 go
+create proc USERS_LOGIN
+@user varchar(30),
+@pass varchar(30)
+as
+begin
+	declare @resp int = 0;
+	if exists(select ID from USERS where USERNAME = @user and PASSWORD=@pass)
+	begin
+		set @resp = (select ID from USERS where USERNAME = @user and PASSWORD=@pass);
+	end
+	
+	select @resp
+end

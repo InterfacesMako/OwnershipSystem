@@ -51,6 +51,15 @@ namespace SistemaInmobiliario
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword UserRepeatPassword;
 
         /// <summary>
+        /// lblResp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResp;
+
+        /// <summary>
         /// btnCreateAndLogin control.
         /// </summary>
         /// <remarks>

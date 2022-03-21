@@ -17,6 +17,7 @@
     <div class="container-fluid">
         <fieldset>
             <legend><i class="far fa-address-card"></i>&nbsp; Información personal</legend>
+		<input type="hidden" runat="server" id="usuario_idRol" value="0" />
 		<input type="hidden" runat="server" id="usuario_id" value="0" />
             <div class="container-fluid">
                 <div class="row">
@@ -102,38 +103,20 @@
     <script type="text/javascript">
         const urlEdit = '<%=ResolveUrl($"{WebService}.asmx")%>/Actualizar';
         const btnGuardar = document.querySelector("#btnGuardar");
-
-        const id = document.querySelector("#<%=usuario_id.ClientID%>");
+        
+        const Id = document.querySelector("#<%=usuario_id.ClientID%>");
+        const IdRol = document.querySelector("#<%=usuario_idRol.ClientID%>");
         const dni = document.querySelector("#<%=usuario_dni.ClientID%>");
-        const nombre = document.querySelector("#<%=usuario_nombre.ClientID%>");
-        const apellido = document.querySelector("#<%=usuario_apellido.ClientID%>");
+        const nombres = document.querySelector("#<%=usuario_nombre.ClientID%>");
+        const apellidos = document.querySelector("#<%=usuario_apellido.ClientID%>");
         const telefono = document.querySelector("#<%=usuario_telefono.ClientID%>");
         const direccion = document.querySelector("#<%=usuario_direccion.ClientID%>");
         const usuario = document.querySelector("#<%=usuario_usuario.ClientID%>");
-        const email = document.querySelector("#<%=usuario_email.ClientID%>");
+        const correo = document.querySelector("#<%=usuario_email.ClientID%>");
         const clave1 = document.querySelector("#<%=usuario_clave_1.ClientID%>");
         const clave2 = document.querySelector("#<%=usuario_clave_2.ClientID%>");
-
-        let GetData = function () {
-            return {
-                user: {
-                    Id: id.value,
-                    Dni: dni.value,
-                    Nombre: nombre.value,
-                    Apellido: apellido.value,
-                    Telefono: telefono.value,
-                    Direccion: direccion.value,
-                    Usuario: usuario.value,
-                    Email: email.value,
-                    Clave: clave1.value,
-                }
-            };
-		}
-
-        let getID = (data) => {
-            data.user.Id = id.value;
-        }
-
     </script>
+    <script src="Scripts/Formularios/FrmUserUpdate.js"></script>
+    <script src="Scripts/Formularios/FrmStandard.js"></script>
     <script src="Scripts/actionsMain.js"></script>
 </asp:Content>

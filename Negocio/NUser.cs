@@ -36,5 +36,10 @@ namespace Negocio
         {
             return data.Eliminar(Id);
         }
+
+        public int Login(string user, string pass)
+        {
+            return data.Login(user, pass);
+        }
     }
 }

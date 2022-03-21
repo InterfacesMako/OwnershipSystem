@@ -40,6 +40,8 @@
 	</fieldset>
 	<br><br><br>
 	<p class="text-center" style="margin-top: 40px;">
+		<a href="ClientNew.aspx" class="btn btn-raised btn-success btn-sm"><i class="fas fa-file"></i> &nbsp; NUEVO</a>
+		&nbsp; &nbsp;
 		<button type="reset" class="btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
 		&nbsp; &nbsp;
 		<button id="btnGuardar" type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
@@ -56,23 +58,8 @@
         const apellido = document.querySelector("#<%=cliente_apellido.ClientID%>");
         const telefono = document.querySelector("#<%=cliente_telefono.ClientID%>");
         const direccion = document.querySelector("#<%=cliente_direccion.ClientID%>");
-
-        let GetData = function () {
-            return {
-                cliente: {
-                    DNI: dni.value,
-                    Nombre: nombre.value,
-                    Apellido: apellido.value,
-                    Telefono: telefono.value,
-                    Direccion: direccion.value
-                }
-            };
-		}
-
-        let getID = (data) => {
-            data.cliente.Id = Id.value;
-        }
-
     </script>
+    <script src="Scripts/Formularios/FrmClientNew.js"></script>
+    <script src="Scripts/Formularios/FrmStandard.js"></script>
     <script src="Scripts/actionsMain.js"></script>
 </asp:Content>
