@@ -1,5 +1,6 @@
 ﻿using Entidad;
 using Negocio;
+using SistemaInmobiliario.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -88,23 +89,37 @@ namespace SistemaInmobiliario
         }
 
         [WebMethod]
-        public IEnumerable<Entidad.Company> Listar()
+        public ModelViewCompany Listar(Paginator paginator, BaseFilter filters)
         {
             var response = HttpContext.Current.Request;
             string resp = string.Empty;
 
-            var users = new List<Entidad.Company>();
+            ModelViewCompany modelViewCompany = new ModelViewCompany();
 
             try
             {
-                users = nCompany.Listar().ToList();
+                var company = new List<Entidad.Company>();
+                company = nCompany.Listar()
+                     .Where(x => x.Nombre.Contains(filters.Search.Trim()))
+                     .ToList();
+
+                int CantItemsTot = company.Count();
+                int ItemsPerPage = paginator.ItemsPerPage;
+                int PagesTot = Helper.GetPageTotalsModelViews(CantItemsTot, ItemsPerPage);
+
+                modelViewCompany.ActualPage = paginator.ActualPage;
+                modelViewCompany.PagesTot = PagesTot;
+                modelViewCompany.Model = company.OrderBy(x => x.Id)
+                    .Skip((paginator.ActualPage - 1) * ItemsPerPage)
+                    .Take(ItemsPerPage)
+                    .ToList();
             }
             catch (Exception ex)
             {
                 resp = ex.Message;
             }
 
-            return users;
+            return modelViewCompany;
         }
     }
 }

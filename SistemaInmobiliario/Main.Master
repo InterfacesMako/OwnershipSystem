@@ -113,7 +113,9 @@
 			</asp:ContentPlaceHolder>
 		</main>
     </form>
-
+	<script>
+        const controlSession = '<%=ResolveUrl("ServiciosSession.asmx")%>/KeepActiveSession';
+    </script>
 	<!--=============================================
 	=    Include JavaScript files Initialitation    =
 	==============================================-->

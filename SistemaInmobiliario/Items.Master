@@ -24,7 +24,7 @@
                 <a id="aList" href="ItemsList"><i class="fas fa-clipboard-list fa-fw"></i>&nbsp; LISTA DE ITEMS</a>
             </li>
             <li>
-                <a href="#buscar"><i class="fas fa-search fa-fw"></i>&nbsp; BUSCAR ITEM</a>
+                <a id="btnBuscador" href="#"><i class="fas fa-search fa-fw"></i>&nbsp; BUSCAR ITEM</a>
             </li>
         </ul>
     </div>

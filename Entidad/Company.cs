@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class Company
+    public class Company : BaseModel
     {
-        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
+    }
+
+    public class FilterCompany : BaseFilter
+    {
+
     }
 }

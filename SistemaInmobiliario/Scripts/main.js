@@ -48,6 +48,21 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	window.setInterval(() => {
+		$.ajax({
+			type: "POST",
+			url: controlSession,
+			data: {},
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			async: true,
+			success: VerifySessionState,
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert(textStatus + ": " + XMLHttpRequest.responseText);
+			}
+		});
+	}, (1000 * 60 * 1));
 });
 (function($){
     $(window).on("load",function(){
@@ -65,3 +80,33 @@ $(document).ready(function(){
         });
     });
 })(jQuery);
+
+function VerifySessionState(result) {
+	if (result.d) {
+		Swal.fire({
+			title: 'Sesion Vencida',
+			text: "La session se ha vencido! ¿desea continuar?",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#F44336',
+			cancelButtonColor: '#03A9F4',
+			confirmButtonText: '<i class="zmdi zmdi-run"></i> Salir de la sesion',
+			cancelButtonText: '<i class="zmdi zmdi-close-circle"></i> Continuar dentro'
+		}).then((result) => {
+			if (result.value) {
+				window.location = "Login";
+			}
+		});
+	}
+	else {
+		Swal.fire({
+			title: 'Error',
+			text: "Se ha vencido la sesion y no se ha podido recuperar",
+			type: 'error',
+			confirmButtonColor: '#F44336',
+			confirmButtonText: '<i class="zmdi zmdi-run"></i> Aceptar y Salir',
+		}).then(function () {
+			window.location.href = "Login.aspx";
+		});
+	}
+}

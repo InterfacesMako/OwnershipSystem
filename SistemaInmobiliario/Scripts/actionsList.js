@@ -1,4 +1,95 @@
-﻿
+﻿function clearBodyList() {
+    let listado = document.querySelector("#listado");
+    if (listado.children[1]) {
+        listado.children[1].remove();
+    }
+    if (!listado.children[1]) {
+        tbody = document.createElement('tbody');
+        listado.appendChild(tbody);
+    }
+}
+
+function addPaginator(pagActiva, pagMostrar, pagTotales) {
+    var paginador = document.querySelector("#paginador");
+
+    if (paginador != null) {
+
+        removePaginator();
+
+        let paginasMargen = Math.ceil((pagMostrar / 2));
+        let PaginaPrimera = 1; //indicador de pagina Inicial
+        let paginaUltima = pagMostrar; //indicador de pagina Final
+
+        if (pagActiva <= paginasMargen) {
+            PaginaPrimera = 1;
+        }
+        else if (pagActiva >= paginasMargen) {
+            PaginaPrimera = pagActiva - parseInt(paginasMargen);
+            paginaUltima = pagActiva + parseInt(paginasMargen);
+        }
+
+        if (paginaUltima > pagTotales)
+            paginaUltima = pagTotales;
+
+        paginador.appendChild(addFirstOrLast(pagActiva - 1, "«", pagTotales));
+
+        for (var i = PaginaPrimera; i <= paginaUltima; i++) {
+
+            let esPagActiva = false;
+
+            if (i == pagActiva) {
+                esPagActiva = true;
+            }
+
+            paginador.appendChild(addLiToList(esPagActiva, i));
+        }
+
+        paginador.appendChild(addFirstOrLast(pagActiva + 1, "»", pagTotales));
+    }
+}
+
+function removePaginator() {
+    while (paginador.children.length > 0) {
+        paginador.children[0].remove();
+    }
+}
+
+function addLiToList(esPagActiva, pag) {
+    let li = document.createElement('li');
+    li.appendChild(addPageRedirect(pag));
+    if (esPagActiva) {
+        li.classList = ["page-item active"];
+    }
+
+    return li;
+}
+
+function addPageRedirect(pag) {
+    let a = document.createElement('a');
+    a.classList = ["page-link"];
+    a.href = "#";
+    a.addEventListener("click", function () { Listar(pag); });
+    a.textContent = pag;
+    return a;
+}
+
+function addFirstOrLast(pag, simbolo, pagTotales) {
+    let li = document.createElement('li');
+    let a = document.createElement('a');
+    a.classList = ["page-link"];
+    a.href = "#";
+    a.textContent = simbolo;
+
+    if (pag <= 0 || pag > pagTotales) {
+        li.classList = ["page-item disabled"];
+    } else {
+        a.addEventListener("click", function () { Listar(pag); });
+    }
+
+    li.appendChild(a);
+    return li;
+}
+
 function crearFila(item) {
     var tr = document.createElement("tr");
     tr.className = "text-center";
@@ -75,7 +166,7 @@ function crearEliminar(Id) {
 
 function Eliminar(Id) {
 
-    var data = {
+    let data = {
         Id: Id
     };
 
@@ -106,16 +197,31 @@ function Eliminar(Id) {
     });
 }
 
-function Listar() {
+function Listar(pag = 1) {
     var lista = [];
+
+    let data = {
+        paginator: {
+            ActualPage: pag,
+            ItemsPerPage: ddlRegistroPaginacion.value
+        },
+        filters: GetFilters()
+    }
 
     $.ajax({
         type: 'POST',
         datatype: 'json',
         contentType: 'application/json; charset=utf-8',
         url: urlGetList,
+        data: JSON.stringify(data),
         success: function (response) {
-            response.d.forEach(item => {
+            clearBodyList();
+
+            addPaginator(response.d.ActualPage,
+                response.d.NumPageShow,
+                response.d.PagesTot);
+
+            response.d.Model.forEach(item => {
                 obj = GetData(item);
                 lista.push(obj);
             });

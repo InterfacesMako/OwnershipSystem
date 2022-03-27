@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class User
+    public class User : BaseModel
     {
         public User()
         {
@@ -18,7 +18,6 @@ namespace Entidad
             IdRol = Roles.SOLO_LEER;
         }
 
-        public int Id { get; set; }
         public string DNI { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
@@ -28,5 +27,10 @@ namespace Entidad
         public string Correo { get; set; }
         public string Password { get; set; }
         public Roles IdRol { get; set; }
+    }
+
+    public class FilterUser : BaseFilter
+    {
+
     }
 }

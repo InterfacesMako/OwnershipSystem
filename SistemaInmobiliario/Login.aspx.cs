@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -41,7 +42,8 @@ namespace SistemaInmobiliario
 
                 Session["identity"] = userIdentity;
                 Session["idUser"] = idUser;
-                Response.Redirect("Dashboard");
+
+                FormsAuthentication.RedirectFromLoginPage(userIdentity.Username, true);
             }
             else
             {

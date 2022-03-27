@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseFilter.cs" />
+    <Compile Include="BaseModel.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Estado.cs" />

@@ -24,7 +24,7 @@
 				<a id="aList" href="UserList"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE USUARIOS</a>
 			</li>
 			<li>
-				<a href="#buscar"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR USUARIO</a>
+				<a id="btnBuscador" href="#"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR USUARIO</a>
 			</li>
 		</ul>	
 	</div>

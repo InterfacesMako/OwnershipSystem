@@ -25,7 +25,7 @@
                 <a id="aList" href="ClientList"><i class="fas fa-clipboard-list fa-fw"></i>&nbsp; LISTA DE CLIENTES</a>
             </li>
             <li>
-                <a href="#buscar"><i class="fas fa-search fa-fw"></i>&nbsp; BUSCAR CLIENTE</a>
+                <a id="btnBuscador" href="#"><i class="fas fa-search fa-fw"></i>&nbsp; BUSCAR CLIENTE</a>
             </li>
         </ul>
     </div>

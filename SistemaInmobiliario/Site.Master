@@ -29,6 +29,20 @@
             }
 		}
 
+        const pnlBuscador = document.querySelector("#buscador");
+
+        const btnBuscador = document.querySelector("#btnBuscador");
+        if (btnBuscador != null) {
+            btnBuscador.addEventListener("click", () => {
+                if (pnlBuscador.style.display == "none") {
+                    pnlBuscador.style.display = "block";
+                } else {
+                    pnlBuscador.style.display = "none";
+                }
+            });
+        }
+       
+
 		function CagarFilasConPermisos() {
 
             if (Edit == "False") {
@@ -45,5 +59,6 @@
 		}
 
         CagarFilasConPermisos();
+
     </script>
 </asp:Content>

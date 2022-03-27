@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class Cliente
+    public class Cliente : BaseModel
     {
-        public int Id { get; set; }
         public string DNI { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
+    }
+
+    public class FilterCliente: BaseFilter
+    {
+        public string DNI { get; set; }
+        public string Telefono { get; set; }
     }
 }
